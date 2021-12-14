@@ -1,0 +1,23 @@
+{
+    "name":"First Extension",
+    "description":"Simple Entension",
+    "version":"1.0",
+    "manifest_version": 3,
+    "permissions": ["storage"],
+    "action":{
+        "default_popup":"index.html",
+        "default_icon": {
+            "16": "icon.png",
+            "32": "icon.png",
+            "48": "icon.png",
+            "128": "icon.png"
+          }
+    },
+    "options_page": "options.html",
+    "icons": {
+        "16": "icon.png",
+        "32": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    }
+}

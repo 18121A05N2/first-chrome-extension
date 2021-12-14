@@ -1,0 +1,24 @@
+<html>
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://codeforces.com ">    
+    <body>
+        <script>
+            let s = document.getElementById("search");
+            document.getElementById("search").addEventListener("change", searchFunction);
+
+            let searchFunction = ()=>{
+                let xmlreq = new XMLHttpRequest();
+                xmlreq.onreadystatechange=()=>{
+                    if(this.status==200){
+                        document.getElementById("result").innerHTML=this.responseText;
+                    }
+                };
+                xmlreq.open("GET","https://codeforces.com/api/user.info?handles="+s.value)
+                xmlreq.send();
+            }
+        </script>
+        Hello world
+        <input id='search' type='search' >
+        <div id='result'>
+        </div>
+    </body>
+</html>
